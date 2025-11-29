@@ -25,8 +25,8 @@ WORKDIR /home/user
 RUN git clone --depth 1 --single-branch --branch 5.4.1-503-build-with-ocaml.5.3.1+relocatable https://github.com/alicecaml/dot-merlin-reader
 WORKDIR dot-merlin-reader
 RUN dune build
-RUN cp -rvL _build/install/default dot-merlin-reader-5.4.1-503-build-with-ocaml.5.3.1+relocatable-x86_64-linux-gnu
-RUN tar czf dot-merlin-reader-5.4.1-503-build-with-ocaml.5.3.1+relocatable-x86_64-linux-gnu.tar.gz dot-merlin-reader-5.4.1-503-build-with-ocaml.5.3.1+relocatable-x86_64-linux-gnu
+RUN cp -rvL _build/install/default dot-merlin-reader-5.4.1-503-built-with-ocaml.5.3.1+relocatable-x86_64-linux-gnu
+RUN tar czf dot-merlin-reader-5.4.1-503-built-with-ocaml.5.3.1+relocatable-x86_64-linux-gnu.tar.gz dot-merlin-reader-5.4.1-503-built-with-ocaml.5.3.1+relocatable-x86_64-linux-gnu
 
 FROM scratch
-COPY --from=builder /home/user/dot-merlin-reader/dot-merlin-reader-5.4.1-503-build-with-ocaml.5.3.1+relocatable-x86_64-linux-gnu.tar.gz .
+COPY --from=builder /home/user/dot-merlin-reader/dot-merlin-reader-5.4.1-503-built-with-ocaml.5.3.1+relocatable-x86_64-linux-gnu.tar.gz .
