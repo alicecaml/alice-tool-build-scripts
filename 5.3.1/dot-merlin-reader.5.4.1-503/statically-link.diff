@@ -1,0 +1,11 @@
+diff --git i/src/dune w/src/dune
+index 7d77d2e..5312967 100644
+--- i/src/dune
++++ w/src/dune
+@@ -1,5 +1,6 @@
+ (executable
+  (package dot-merlin-reader-alice)
++ (link_flags (:standard -cclib -static))
+  (name dot_merlin_reader)
+  (public_name dot-merlin-reader)
+  (libraries findlib merlin-lib.utils merlin-lib.dot_protocol str unix))
